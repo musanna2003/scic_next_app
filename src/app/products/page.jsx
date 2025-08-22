@@ -10,7 +10,7 @@ const ProductsPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/products"); // your Express API
+        const res = await fetch("https://scic-app-backend.vercel.app/products"); // your Express API
         const data = await res.json();
         setProducts(data);
       } catch (error) {

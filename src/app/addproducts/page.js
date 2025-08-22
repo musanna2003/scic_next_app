@@ -21,7 +21,7 @@ export default function AddProductPage() {
         e.preventDefault();
 
         try {
-            const res = await fetch("http://localhost:5000/products", {
+            const res = await fetch("https://scic-app-backend.vercel.app/products", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
