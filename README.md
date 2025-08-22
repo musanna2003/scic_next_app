@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shoe Store 🥿👟
 
-## Getting Started
+A simple **Next.js shoe selling web app**.  
+It has a modern homepage with hero section, featured products, and navigation to view, add, and manage products.  
+Built with **Next.js, MongoDB, and Express API**.
 
-First, run the development server:
+---
 
+## 🚀 Features
+- Home page with navigation bar, hero, featured products, and footer
+- Product listing page
+- Single product details page
+- Add new products page (form connected to backend)
+- User authentication (Login with NextAuth planned)
+
+---
+
+## 🛠️ Setup & Installation
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/shoe-store.git
+cd shoe-store
 ```
 
-Open [https://scic-app-backend.vercel.app](https://scic-app-backend.vercel.app) with your browser to see the result.
+### 2. Install dependencies
+For frontend (Next.js):
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+For backend (Express API):
+```bash
+cd api
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Environment variables  
+Create a `.env.local` file inside the **frontend root**:
+```env
+MONGO_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+```
 
-## Learn More
+And inside the **backend folder (`api/.env`)**:
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Run the project
+Frontend (Next.js):
+```bash
+npm run dev
+```
+👉 App runs at: [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Backend (Express API):
+```bash
+node index.js
+```
+👉 API runs at: [http://localhost:5000](http://localhost:5000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📍 Route Summary
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Frontend (Next.js)
+- `/` → Home (Nav, Hero, Featured Products, Footer)
+- `/products` → All products page
+- `/products/[id]` → Single product details
+- `/add-product` → Add new product form
+- `/login` → Login page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Backend (Express API)
+- `GET /products` → Get all products
+- `GET /products/:id` → Get single product by ID
+- `POST /products` → Add a new product
+
+---
+
+## 🤝 Contribution
+PRs are welcome! Feel free to fork and improve the project.
+
+---
+
+## 📜 License
+MIT License © 2025
